@@ -1,0 +1,125 @@
+/* style.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(to bottom, #a3d8f4, #005f99);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    backdrop-filter: blur(5px);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.chat-container {
+    background: #fff;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #f9f9f9;
+}
+
+.user-msg, .system-msg {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    animation: fade-in 0.3s ease forwards;
+    line-height: 1.4;
+    font-size: 0.95rem;
+    word-wrap: break-word;
+}
+
+.user-msg {
+    align-self: flex-end;
+    background: #4daaf7;
+    color: #fff;
+}
+
+.system-msg {
+    align-self: flex-start;
+    background: #d9ecff;
+    color: #000;
+}
+
+@keyframes fade-in {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.input-area {
+    display: flex;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    padding: 10px;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-area button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background: #4daaf7;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.1s ease;
+}
+
+.input-area button:active {
+    transform: scale(0.95);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    background: rgba(0,0,0,0.1);
+    font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+    header { font-size: 1.2rem; }
+    .chat-container {
+        height: 70vh;
+    }
+}
